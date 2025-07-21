@@ -2,6 +2,8 @@
 
 A full-stack banking web application developed during my **Full-Stack Internship at the National Bank of Egypt (NBE)**. Built with **ASP.NET Core MVC**, **Entity Framework Core**, and **SQL Server**, this project simulates core banking functionalities such as user registration, authentication, account management, and secure transactions — aimed to handle real-world scenarios with a large database and optimized backend logic.
 
+---
+
 ## Features
 
 ### User Module
@@ -52,6 +54,7 @@ jQuery & JavaScript – UI interactivity and enhancements
 ASP.NET Identity / Custom Auth – Secure user authentication and authorization
 
 ---
+
 ## Getting Started
 
 ### Prerequisites
@@ -70,7 +73,11 @@ dotnet ef database update
 
 dotnet run
 
+---
+
 ## Demo
+
+---
 
 ## Contact
 Let me know if you have any questions or updates — feel free to email me at **saif_ahmed@aucegypt.edu**.
