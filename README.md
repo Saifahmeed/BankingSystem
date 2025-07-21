@@ -1,6 +1,6 @@
 # NBE Banking System
 
-A full-stack banking web application developed during my **Full-Stack Internship at the National Bank of Egypt (NBE)**. Built with **ASP.NET Core MVC**, **Entity Framework Core**, and **SQL Server**, this project simulates core banking functionalities such as user registration, authentication, account management, and secure transactions — tailored to handle real-world scenarios with a modern UI and optimized backend logic.
+A full-stack banking web application developed during my **Full-Stack Internship at the National Bank of Egypt (NBE)**. Built with **ASP.NET Core MVC**, **Entity Framework Core**, and **SQL Server**, this project simulates core banking functionalities such as user registration, authentication, account management, and secure transactions — aimed to handle real-world scenarios with a large database and optimized backend logic.
 
 ---
 
@@ -41,12 +41,17 @@ A full-stack banking web application developed during my **Full-Stack Internship
 
 ## Tech Stack
 
-| Backend framework              | ASP.NET Core MVC       |
-| ORM for database operations    | Entity Framework Core  |
-| Relational database            | SQL Server LocalDB     |
-| Frontend styling and layout    | Bootstrap 5            |
-| Frontend interactivity         | jQuery + JS            |
-| Authentication & Authorization | Identity / Custom Auth |
+ASP.NET Core MVC – Backend web framework (MVC pattern)
+
+Entity Framework Core – ORM for database access
+
+SQL Server LocalDB – Development database
+
+Bootstrap 5 – Responsive frontend styling
+
+jQuery & JavaScript – UI interactivity and enhancements
+
+ASP.NET Identity / Custom Auth – Secure user authentication and authorization
 
 ---
 ## Getting Started
