@@ -39,7 +39,7 @@ A full-stack banking web application developed during my **Full-Stack Internship
 
 ## Tech Stack
 
-ASP.NET Core MVC – Backend web framework (MVC pattern)
+ASP.NET Core MVC – Backend web framework
 
 Entity Framework Core – ORM for database access
 
@@ -57,7 +57,7 @@ ASP.NET Identity / Custom Auth – Secure user authentication and authorization
 ### Prerequisites
 - .NET 8 SDK or later
 - SQL Server LocalDB installed
-- 
+
 ### 1. Configure your connection string
 
 Open `appsettings.json` and update the connection string to match your local SQL Server setup:
