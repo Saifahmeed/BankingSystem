@@ -66,13 +66,14 @@ ASP.NET Identity / Custom Auth – Secure user authentication and authorization
 Open `appsettings.json` and update the connection string to match your local SQL Server setup:
 
 ### 2. Run the EF Core migrations (if needed):
-
+```bash
 dotnet ef database update
+```
 
 ### 3. Build and run the project using Visual Studio or:
-
+```bash
 dotnet run
-
+```
 ---
 
 ## Demo
