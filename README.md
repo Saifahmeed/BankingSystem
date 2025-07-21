@@ -1,1 +1,74 @@
-# BankingSystem
+# NBE Banking System
+
+A full-stack banking web application developed during my **Full-Stack Internship at the National Bank of Egypt (NBE)**. Built with **ASP.NET Core MVC**, **Entity Framework Core**, and **SQL Server**, this project simulates core banking functionalities such as user registration, authentication, account management, and secure transactions — tailored to handle real-world scenarios with a modern UI and optimized backend logic.
+
+---
+
+## Features
+
+### User Module
+- Register as a new banking user (with pending status).
+- Login with validation for user status (only accepted users can access).
+- Secure password reset via phone number.
+- Role-based access for users and admins.
+
+### Admin Dashboard
+- Approve or reject new user accounts.
+- View user list with statuses and details.
+- Manage accounts and monitor activity.
+
+### Account Management
+- Create new bank accounts with:
+  - Account type (Savings/Checking)
+  - Default currency (EGP, USD, EUR, etc.)
+  - Starting balance of 1000
+- List and view account details with current balance and status.
+
+### Transactions
+- Transfer money between accounts with:
+  - Real-time balance check
+  - Receiver account name confirmation (modal popup)
+  - Only allows transactions between **active accounts**
+- Animated and interactive form UI with real-time feedback.
+
+### UI/UX
+- Clean and modern interface using Bootstrap 5.
+- Green-themed branding inspired by NBE’s color identity.
+- Hover effects, modal confirmations, and responsive layout.
+- Animated transitions for a fluid experience.
+
+---
+
+## Tech Stack
+
+| Backend framework              | ASP.NET Core MVC       |
+| ORM for database operations    | Entity Framework Core  |
+| Relational database            | SQL Server LocalDB     |
+| Frontend styling and layout    | Bootstrap 5            |
+| Frontend interactivity         | jQuery + JS            |
+| Authentication & Authorization | Identity / Custom Auth |
+
+---
+## Getting Started
+
+### Prerequisites
+- .NET 8 SDK or later
+- SQL Server LocalDB installed
+- 
+### 1. Configure your connection string
+
+Open `appsettings.json` and update the connection string to match your local SQL Server setup:
+
+### 2. Run the EF Core migrations (if needed):
+
+dotnet ef database update
+
+### 3. Build and run the project using Visual Studio or:
+
+dotnet run
+
+## Demo
+
+## Contact
+Let me know if you have any questions or updates — feel free to email me at **saif_ahmed@aucegypt.edu**.
+
