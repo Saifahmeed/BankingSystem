@@ -1,0 +1,136 @@
+﻿@model BankingSystem.Models.ViewModels.AccountViewModel
+
+@{
+    ViewData["Title"] = "Create Account";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body {
+        background: linear-gradient(135deg, #003d25, #ffd700);
+        font-family: 'Segoe UI', sans-serif;
+    }
+
+    .form-wrapper {
+        max-width: 600px;
+        margin: 80px auto;
+        background: rgba(255, 255, 255, 0.97);
+        padding: 40px 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        animation: fadeSlideIn 0.6s ease-out;
+    }
+
+    .form-title {
+        text-align: center;
+        color: #004d26;
+        font-weight: 700;
+        margin-bottom: 30px;
+        font-size: 28px;
+        position: relative;
+    }
+
+    .input-wrapper {
+        margin-bottom: 25px;
+    }
+
+    .input-label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #004d26;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 16px;
+    }
+
+        .input-label i {
+            color: #00793f;
+        }
+
+    .input-control {
+        width: 100%;
+        padding: 10px 14px;
+        border: 2px solid #d1d5db;
+        border-radius: 12px;
+        font-size: 15px;
+        transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+        .input-control:focus {
+            border-color: #00793f;
+            box-shadow: 0 0 0 0.2rem rgba(0, 121, 63, 0.25);
+            outline: none;
+        }
+
+    .btn-primary-gradient {
+        background: linear-gradient(to right, #004d26, #00793f, #ffd700);
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 16px;
+        cursor: pointer;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .btn-primary-gradient:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+        }
+
+    .form-actions {
+        margin-top: 30px;
+    }
+
+    .text-danger {
+        font-size: 13px;
+        color: #d32f2f;
+    }
+</style>
+
+<div class="form-wrapper">
+    <h2 class="form-title">🏦 Open New Account</h2>
+    <form asp-action="Create" method="post">
+        <div class="input-wrapper">
+            <label asp-for="BranchId" class="input-label">
+                <i class="bi bi-building"></i> Select Branch
+            </label>
+            <select asp-for="BranchId" asp-items="Model.Branches" class="input-control"></select>
+            <span asp-validation-for="BranchId" class="text-danger"></span>
+        </div>
+
+        <div class="input-wrapper">
+            <label asp-for="AccountTypeId" class="input-label">
+                <i class="bi bi-ui-checks"></i> Account Type
+            </label>
+            <select asp-for="AccountTypeId" asp-items="Model.AccountTypes" class="input-control"></select>
+            <span asp-validation-for="AccountTypeId" class="text-danger"></span>
+        </div>
+
+        <div class="input-wrapper">
+            <label asp-for="CurrencyId" class="input-label">
+                <i class="bi bi-currency-exchange"></i> Currency
+            </label>
+            <select asp-for="CurrencyId" asp-items="Model.Currencies" class="input-control"></select>
+            <span asp-validation-for="CurrencyId" class="text-danger"></span>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn-primary-gradient">
+                <i class="bi bi-plus-circle"></i> Create Account
+            </button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

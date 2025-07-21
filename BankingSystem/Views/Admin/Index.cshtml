@@ -1,0 +1,56 @@
+﻿@model IEnumerable<BankingSystem.Models.User>
+
+@{
+    ViewData["Title"] = "User Management";
+}
+
+<h2 class="mb-4">User Management</h2>
+
+<table class="table table-hover table-bordered align-middle text-center shadow-sm">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">#ID</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Status</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr data-status="@user.UserTypeId">
+                <td>@user.UserId</td>
+                <td>@user.Fname</td>
+                <td>@user.Lname</td>
+                <td>@user.Email</td>
+                <td>
+                    @if (user.UserTypeId == 1)
+                    {
+                        <span class="badge bg-warning text-dark">Pending</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-success">Accepted</span>
+                    }
+                </td>
+                <td>
+                    @if (user.UserTypeId == 1)
+                    {
+                        <form asp-controller="Admin" asp-action="Approve" method="post" class="d-inline">
+                            <input type="hidden" name="id" value="@user.UserId" />
+                            <button type="submit" class="btn btn-outline-success btn-sm">
+                                <i class="bi bi-check-circle"></i> Approve
+                            </button>
+                        </form>
+                    }
+                    else
+                    {
+                        <span class="text-muted"><i class="bi bi-check-circle-fill text-success"></i> Approved</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

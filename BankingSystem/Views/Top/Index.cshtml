@@ -1,0 +1,126 @@
+﻿@{
+    var isAuth = Context.Session.GetString("IsAuthenticated") == "true";
+    var fname = Context.Session.GetString("FirstName") ?? "";
+    var lname = Context.Session.GetString("LastName") ?? "";
+    ViewData["Title"] = "Welcome to NBE Banking System";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Hero Banner -->
+<div class="text-white py-5 px-4 mx-auto" style="background: linear-gradient(135deg, #004d26 0%, #00793f 100%);
+    min-height: 90vh;
+    border-radius: 2rem;
+    margin: 2rem auto;
+    box-shadow: 0 0 40px rgba(0,0,0,0.4);
+    max-width: 95%;
+    width: 100%;">
+
+    <div class="container d-flex flex-column justify-content-center align-items-center text-center" style="min-height: 80vh;">
+        <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown">
+            Welcome to <span class="text-warning">NBE</span> Online Banking
+        </h1>
+        <p class="lead mb-5 animate__animated animate__fadeInLeft animate__delay-1s">
+            Fast. Secure. Global.<br />Bank with confidence in any currency, anywhere, anytime.
+        </p>
+        <div>
+            @if (isAuth)
+            {
+                <a href="@Url.Action("Dashboard", "Users")" class="btn btn-success btn-lg px-5 me-3 rounded-pill shadow animate__animated animate__pulse animate__infinite">
+                    Go to Dashboard
+                </a>
+            }
+            else
+            {
+                <a href="@Url.Action("Index", "Login")" class="btn btn-success btn-lg px-5 me-3 rounded-pill shadow animate__animated animate__pulse animate__infinite">
+                    Login
+                </a>
+
+                <a href="@Url.Action("Create", "Users")" class="btn btn-outline-light btn-lg px-5 rounded-pill shadow animate__animated animate__fadeInUp animate__delay-2s">
+                    Register
+                </a>
+            }
+        </div>
+    </div>
+</div>
+
+
+<!-- Features Section -->
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold text-success">Why Choose NBE?</h2>
+        <p class="text-muted">Empowering over 50 million users with secure, smart, and global banking solutions.</p>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-4 text-center">
+            <div class="p-4 shadow rounded h-100 border border-success bg-light animate__animated animate__fadeInUp">
+                <i class="bi bi-lock-fill display-4 text-success mb-3"></i>
+                <h5 class="fw-bold">Secure</h5>
+                <p>Your accounts are protected by the latest encryption and authentication systems.</p>
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="p-4 shadow rounded h-100 border border-success bg-light animate__animated animate__fadeInUp animate__delay-1s">
+                <i class="bi bi-currency-exchange display-4 text-success mb-3"></i>
+                <h5 class="fw-bold">Multi-Currency Transfers</h5>
+                <p>Send and receive money in any currency with real-time exchange rates and minimal fees.</p>
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="p-4 shadow rounded h-100 border border-success bg-light animate__animated animate__fadeInUp animate__delay-2s">
+                <i class="bi bi-speedometer2 display-4 text-success mb-3"></i>
+                <h5 class="fw-bold">Lightning Fast Transactions</h5>
+                <p>Our system ensures your transfers and payments are processed instantly 24/7.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Stats Section -->
+<div class="bg-light py-5 mt-4">
+    <div class="container text-center">
+        <h2 class="fw-bold text-success mb-5">Trusted by Millions</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-3 mb-4">
+                <h3 class="fw-bold text-dark">50M+</h3>
+                <p class="text-muted">Active Users</p>
+            </div>
+            <div class="col-md-3 mb-4">
+                <h3 class="fw-bold text-dark">200+</h3>
+                <p class="text-muted">Supported Currencies</p>
+            </div>
+            <div class="col-md-3 mb-4">
+                <h3 class="fw-bold text-dark">99.99%</h3>
+                <p class="text-muted">Uptime Reliability</p>
+            </div>
+            <div class="col-md-3 mb-4">
+                <h3 class="fw-bold text-dark">100M+</h3>
+                <p class="text-muted">Transactions/Month</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Call to Action -->
+<div class="bg-success text-white py-5 text-center rounded-4 shadow-lg mx-3 my-5"
+     style="background: linear-gradient(135deg, #004d26 0%, #00793f 100%);">
+
+    <div class="container">
+        @if(isAuth){
+            <h2 class="fw-bold mb-4">Ready to take control of your finances?</h2>
+            <p class="mb-5">Access your dashboard to manage your accounts, make transfers, and more.</p>
+            <a href="@Url.Action("Dashboard", "Users")" class="btn btn-light btn-lg px-5 rounded-pill shadow">
+                Go to Dashboard
+            </a>
+        }
+        else {
+                <h2 class="fw-bold mb-3 display-5">Ready to Join NBE?</h2>
+                <p class="lead mb-4">Experience the next generation of online banking with Egypt's most trusted bank.</p>
+                <a href="@Url.Action("Create", "Users")" class="btn btn-light btn-lg px-5 me-3 rounded-pill shadow-sm">
+                    Create Account
+                </a>
+                <a href="@Url.Action("Index", "Login")" class="btn btn-outline-light btn-lg px-5 rounded-pill shadow-sm">
+                    Login
+            </a>
+            }  
+    </div>
+</div>
+

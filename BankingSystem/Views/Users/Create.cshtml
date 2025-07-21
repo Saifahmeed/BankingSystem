@@ -1,0 +1,152 @@
+﻿@model BankingSystem.Models.User
+
+@{
+    ViewData["Title"] = "Register User";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Animate.css & Bootstrap Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
+
+<style>
+    body {
+        background: linear-gradient(to right top, #002d1f, #004f29, #008f3f, #ffdd57);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        min-height: 100vh;
+    }
+
+    .form-card {
+        max-width: 600px;
+        margin: 60px auto;
+        background: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+        padding: 40px;
+    }
+
+    .form-title {
+        color: #004225;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .form-label {
+        font-weight: 600;
+        color: #003d2f;
+    }
+
+    .form-control {
+        border-radius: 12px;
+        padding: 12px 14px;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        transition: box-shadow 0.3s ease, transform 0.2s ease;
+    }
+
+        .form-control:focus {
+            border-color: #008f3f;
+            box-shadow: 0 0 0 0.2rem rgba(0, 143, 63, 0.2);
+            transform: scale(1.01);
+        }
+
+    .btn-submit {
+        background-color: #008f3f;
+        color: white;
+        padding: 12px 24px;
+        font-size: 1rem;
+        border-radius: 12px;
+        font-weight: 600;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+        .btn-submit:hover {
+            background-color: #005f29;
+            transform: translateY(-2px);
+        }
+
+    .icon-label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 1.1rem;
+    }
+
+    .text-danger {
+        font-size: 0.875rem;
+        color: #cc0000;
+    }
+</style>
+
+<div class="form-card animate__animated animate__fadeIn">
+    <h2 class="form-title">
+        <i class="bi bi-person-plus-fill text-warning"></i> Create Your NBE Account
+    </h2>
+
+    <form asp-action="Create" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+        <div class="mb-3">
+            <label asp-for="Fname" class="form-label icon-label">
+                <i class="bi bi-person-fill text-success"></i> First Name
+            </label>
+            <input asp-for="Fname" class="form-control" />
+            <span asp-validation-for="Fname" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Lname" class="form-label icon-label">
+                <i class="bi bi-person-fill text-success"></i> Last Name
+            </label>
+            <input asp-for="Lname" class="form-control" />
+            <span asp-validation-for="Lname" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label icon-label">
+                <i class="bi bi-envelope-fill text-primary"></i> Email
+            </label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="PhoneNumber" class="form-label icon-label">
+                <i class="bi bi-telephone-fill text-warning"></i> Phone Number
+            </label>
+            <input asp-for="PhoneNumber" class="form-control" />
+            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Address" class="form-label icon-label">
+                <i class="bi bi-geo-alt-fill text-danger"></i> Address
+            </label>
+            <input asp-for="Address" class="form-control" />
+            <span asp-validation-for="Address" class="text-danger"></span>
+        </div>
+
+        <div class="mb-4">
+            <label asp-for="Password" class="form-label icon-label">
+                <i class="bi bi-shield-lock-fill text-secondary"></i> Password
+            </label>
+            <input asp-for="Password" type="password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-submit w-100">
+            <i class="bi bi-check-circle-fill me-1"></i> Register
+        </button>
+
+        <div class="text-center mt-3">
+            <a asp-controller= "Login" asp-action="Index" class="text-dark text-decoration-none small">
+                <i class="bi bi-arrow-left"></i> Back to Login
+            </a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
