@@ -38,7 +38,8 @@ namespace BankingSystem.Controllers
                             .ThenInclude(t => t.SenderAccount)
                                 .ThenInclude(s => s.Currency)
                     .FirstOrDefault();
-
+                
+                
                 return View(user);
             }
             else

@@ -39,6 +39,7 @@ namespace BankingSystem.Controllers
             {
                 if (model.Email == "admin@gmail.com" && model.Password == "1")
                 {
+                    HttpContext.Session.SetString("RoleId", "1");
                     return RedirectToAction("Index", "Admin");
                 }
                 string hashedPassword = HashPassword(model.Password);
@@ -57,6 +58,7 @@ namespace BankingSystem.Controllers
                 else
                 {
                     HttpContext.Session.SetString("UserId", user.UserId.ToString());
+                    HttpContext.Session.SetString("RoleId", "2");
                     HttpContext.Session.SetString("FirstName", user.Fname ?? "");
                     HttpContext.Session.SetString("LastName", user.Lname ?? "");
                     HttpContext.Session.SetString("IsAuthenticated", "true");

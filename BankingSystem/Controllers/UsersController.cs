@@ -76,7 +76,9 @@ namespace BankingSystem.Controllers
                 user.UserTypeId = 1;
                 _context.Add(user);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Pending");
+                ViewBag.Pending = true;
+                ModelState.Clear();
+                return View();
             }
         
             return View(user);

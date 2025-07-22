@@ -14,6 +14,11 @@ namespace BankingSystem.Controllers
         }
         public async Task<IActionResult> Index()
         {
+            var sessionId = HttpContext.Session.GetString("RoleId");
+            if(sessionId != "1")
+            {
+                return RedirectToAction("Index","Top");
+            }
             var bankingContext = _context.Users;
             return View(await bankingContext.ToListAsync());
         }

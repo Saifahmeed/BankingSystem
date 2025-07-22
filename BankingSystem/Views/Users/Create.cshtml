@@ -146,7 +146,35 @@
         </div>
     </form>
 </div>
+<!-- Success Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content text-center">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title">Pending Approval</h5>
+            </div>
+            <div class="modal-body text-dark">
+                You are pending approval. <br />
+                Please try logging in again later.
+            </div>
+        </div>
+    </div>
+</div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            @if (ViewBag.Pending != null && (bool)ViewBag.Pending)
+            {
+                    <text>
+                        const modal = new bootstrap.Modal(document.getElementById('successModal'));
+                        modal.show();
+                        setTimeout(() => {
+                            window.location.href = '@Url.Action("Index", "Login")';
+                        }, 3000); // 3 seconds delay
+                    </text>
+            }
+        });
+    </script>
 }

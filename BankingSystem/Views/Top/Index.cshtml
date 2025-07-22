@@ -24,7 +24,7 @@
         <div>
             @if (isAuth)
             {
-                <a href="@Url.Action("Dashboard", "Users")" class="btn btn-success btn-lg px-5 me-3 rounded-pill shadow animate__animated animate__pulse animate__infinite">
+                <a href="@Url.Action("Index", "Home")" class="btn btn-success btn-lg px-5 me-3 rounded-pill shadow animate__animated animate__pulse animate__infinite">
                     Go to Dashboard
                 </a>
             }
@@ -107,7 +107,7 @@
         @if(isAuth){
             <h2 class="fw-bold mb-4">Ready to take control of your finances?</h2>
             <p class="mb-5">Access your dashboard to manage your accounts, make transfers, and more.</p>
-            <a href="@Url.Action("Dashboard", "Users")" class="btn btn-light btn-lg px-5 rounded-pill shadow">
+            <a href="@Url.Action("Index", "Home")" class="btn btn-light btn-lg px-5 rounded-pill shadow">
                 Go to Dashboard
             </a>
         }
