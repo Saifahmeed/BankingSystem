@@ -54,6 +54,13 @@ jQuery & JavaScript – UI interactivity and enhancements
 ASP.NET Identity / Custom Auth – Secure user authentication and authorization
 
 ---
+## Demo
+
+Watch a demo of the website in action:
+
+[Click here to view the demo on Google Drive](https://drive.google.com/your-demo-link)
+
+---
 
 ## Getting Started
 
